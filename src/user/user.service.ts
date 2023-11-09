@@ -21,6 +21,8 @@ export class UserService {
   ) {}
 
   async userSignUp(userData: UserAuthDto): Promise<UserResponseDto> {
+    console.log('UserService.userSignUp', { userData });
+
     const { login, password } = userData;
     const candidate = await this.userRepository.findOne({ login });
 
@@ -40,6 +42,8 @@ export class UserService {
   }
 
   async userSignIn(userData: UserAuthDto) {
+    console.log('UserService.userSignIn', { userData });
+
     const { login, password } = userData;
     const user = await this.userRepository.findOne({ login });
     if (!user) {
@@ -60,6 +64,8 @@ export class UserService {
   }
 
   async userSignOut(headers: Record<string, string>) {
+    console.log('UserService.userSignOut');
+
     const authorizationHeader = headers['authorization'];
     const token = authorizationHeader.split(' ')[1];
 

@@ -1,18 +1,13 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
-enum Gender {
-  MALE,
-  FEMALE,
-}
-
 @Entity('users')
-export class UserEntity {
+export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  email: string;
+  login: string;
 
-  @Column('enum', { enum: Gender })
-  gender: Gender;
+  @Column()
+  password: string;
 }

@@ -10,6 +10,8 @@ services:
     ports:
       - 3000:3000
       - 9229:9229
+    volumes:
+      - ./dist:/app/dist
     command: npm run start:dev
     depends_on:
       - postgres

@@ -75,6 +75,6 @@ export class UserService {
     tokenBlackList.push(token);
     AuthService.setTokenToBlackList(storage);
 
-    return 'Sign Outed!';
+    return 'Signed Out!';
   }
 }
